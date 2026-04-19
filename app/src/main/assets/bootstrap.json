@@ -1,0 +1,56 @@
+{
+  "session": {
+    "config_ttl_sec": 21600
+  },
+  "selector_policy": {
+    "strategy": "prefer_best_available",
+    "connect_timeout_ms": 4000,
+    "handshake_timeout_ms": 6000,
+    "failure_cooldown_sec": 30,
+    "retry_same_entry_count": 1,
+    "prefer_udp_when_available": true,
+    "fallback_to_tcp_on_udp_failure": true
+  },
+  "user_access": {
+    "subscription_status": "active",
+    "user_id": "test-user",
+    "plan_code": "trial",
+    "expires_at": "2026-12-31",
+    "phone": null,
+    "first_name": null,
+    "last_name": null
+  },
+  "entries": [
+    {
+      "entry_id": "22222222-2222-2222-2222-222222222222",
+      "host": "illfurkn.com",
+      "port": 443,
+      "score": 100,
+      "region": "default",
+      "transports": [
+        {
+          "code": "hy2_salamander",
+          "priority": 1,
+          "network_type": "udp",
+          "anti_dpi_class": "high",
+          "provisioning_status": "active",
+          "connect_material": {
+            "auth": "REPLACE_ME_AUTH",
+            "obfs_type": "salamander",
+            "obfs_password": "REPLACE_ME_AUTH"
+          }
+        },
+        {
+          "code": "tcp_reality_fallback",
+          "priority": 2,
+          "network_type": "tcp",
+          "anti_dpi_class": "medium",
+          "provisioning_status": "active",
+          "connect_material": {
+            "client_id": "725115ea-c379-4fb3-be23-bd357cd11797"
+          }
+        }
+      ]
+    }
+  ]
+}
